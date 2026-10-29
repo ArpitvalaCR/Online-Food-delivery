@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sattvic Elegance Design System for Padmavati Bhojnalaya */
+:root {
+  --primary: #9A1B2F;
+  --primary-hover: #821425;
+  --primary-container: #77001C;
+  --primary-fixed: #FFDADA;
+  --on-primary: #FFFFFF;
+
+  --secondary: #D9531E;
+  --secondary-hover: #BF4414;
+  --secondary-container: #F28C28;
+  --on-secondary: #FFFFFF;
+
+  --tertiary: #1C6B38;
+  --tertiary-fixed: #D3F5DD;
+  --on-tertiary: #FFFFFF;
+
+  --surface: #FCF9F2;
+  --surface-bright: #FFFDF8;
+  --surface-container: #F7EFE1;
+  --surface-container-low: #FAF4E9;
+  --surface-container-high: #EFE3D0;
+  --surface-container-highest: #E6D7BE;
+
+  --on-surface: #1F1916;
+  --on-surface-variant: #5E524D;
+  --outline: #8E7F78;
+  --outline-variant: #E0D3C9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--on-surface);
+  background-color: var(--surface);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-royal {
+  font-family: 'Rozha One', serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-container-low);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Leaflet Customizations */
+.leaflet-popup-content-wrapper {
+  border-radius: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-shadow: 0 10px 25px rgba(154, 27, 47, 0.18);
+  border: 1px solid var(--outline-variant);
+}
+.leaflet-popup-tip {
+  background: white;
+}
+
+/* Pulse animation for active courier rider */
+.pulse-ring {
+  box-shadow: 0 0 0 0 rgba(217, 83, 30, 0.7);
+  animation: pulseGlow 1.8s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes pulseGlow {
+  to {
+    box-shadow: 0 0 0 18px rgba(217, 83, 30, 0);
+  }
+}
+
+/* Veg Indicator Dot */
+.veg-badge {
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--tertiary);
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+}
+.veg-badge::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background-color: var(--tertiary);
+  border-radius: 50%;
+}
+
+/* Pill Button Transitions */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(154, 27, 47, 0.28);
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background-color: var(--surface-bright);
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  transition: all 0.2s ease-in-out;
+}
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Category Filter active pill */
+.category-btn.active {
+  border-color: var(--primary) !important;
+  background-color: var(--surface-bright) !important;
+  box-shadow: 0 4px 12px rgba(154, 27, 47, 0.12);
+}
+.category-btn.active span {
+  color: var(--primary) !important;
+  font-weight: 800;
+}
